@@ -9,24 +9,23 @@ import com.mh.forum.dto.PostDto;
 public interface ForumService {
 
 
-    PostDto addPost(AddPostDto addPostDto,String userEmail);
+    PostDto addPost(AddPostDto addPostDto, String creator);
 
-    PostDto addComment(String id, AddCommentDto addCommentDto);
+    PostDto addComment(String id, AddCommentDto addCommentDto, String creator);
 
     PostDto getPost(String id);
 
-    Iterable<PostDto> getPostsByUser(String user);
+    Iterable<PostDto> getPostsByUser(String creator);
+
     Iterable<PostDto> getPosts();
 
     Iterable<CommentDto> getCommentsByPost(String id);
 
-    Iterable<CommentDto> getCommentsByUser(String id, String author);
+    Iterable<CommentDto> getCommentsByUser(String creator);
 
     PostDto deletePost(String id);
 
-    PostDto updatePost(AddPostDto addPostDto, String id);
-
-    CommentDto updateComent(AddCommentDto addCommentDto, String id);
+    PostDto updatePost(AddPostDto updatePostDto, String id);
 
     boolean addLike(String id);
 
