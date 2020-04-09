@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,15 +22,14 @@ import java.util.Set;
 @Document(collation = "users")
 public class User {
     @Id
-     String idUser;
-     String password;
-     String email;
-     String firstName;
-     String lastName;
-     ProfilePicture profilePicture;
-     Set<Comment> comments =new HashSet<Comment>(0);
-     Set<Post> posts = new HashSet<Post>(0);
-
+    String idUser;
+    String password;
+    String email;
+    String firstName;
+    String lastName;
+    byte[] profilePicture;
+/*    Set<Comment> comments = new HashSet<Comment>(0);
+    Set<Post> posts = new HashSet<Post>(0);*/
 
 
 }

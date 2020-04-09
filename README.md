@@ -5,9 +5,19 @@ IP adresse :
 mongodb+srv://mouna:<password>@cluster0-xn0xe.azure.mongodb.net/test?retryWrites=true&w=majority
 
 
+
+spring.data.mongodb.database=test
+spring.data.mongodb.field-naming-strategy=
+spring.data.mongodb.grid-fs-database=
+spring.data.mongodb.host=localhost
+spring.data.mongodb.password=
+spring.data.mongodb.port=27017
+spring.data.mongodb.repositories.type=auto
+spring.data.mongodb.uri=mongodb://localhost/test
+
 ##Infos
 Stream 
-1. c'est un ojeet qui permet de définir des opérations:
+1. c'est un objetet qui permet de définir des opérations:
     * filtrage
     * mapping
     * Réduction

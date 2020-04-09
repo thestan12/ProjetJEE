@@ -10,6 +10,7 @@ public interface ForumService {
 
 
     PostDto addPost(AddPostDto addPostDto, String creator);
+  /*  CommentDto addC(AddCommentDto addCommentDto, String creator);*/
 
     PostDto addComment(String id, AddCommentDto addCommentDto, String creator);
 

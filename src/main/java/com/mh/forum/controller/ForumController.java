@@ -16,10 +16,22 @@ public class ForumController {
     ForumService forumService;
 
 
-    @PostMapping("/post/{creator}")
+      @PostMapping("/post/{creator}")
     //@PreAuthorize("#author==authentication.name")
     public PostDto addPost(@RequestBody AddPostDto addPost, @PathVariable("creator") String author) {
         return forumService.addPost(addPost, author);
+    }
+
+
+  /*  @PostMapping("/comment/{creator}")
+    //@PreAuthorize("#author==authentication.name")
+    public CommentDto addC(@RequestBody AddCommentDto addC, @PathVariable("creator") String author) {
+        return forumService.addC(addC, author);
+    }*/
+
+    @PutMapping("/post/{id}/comment/{creator}")
+    public PostDto addComment(@PathVariable String id, @PathVariable String creator, @RequestBody AddCommentDto addCommentDto) {
+        return forumService.addComment(id, addCommentDto, creator);
     }
 
     @GetMapping("/post/{id}")
@@ -42,13 +54,8 @@ public class ForumController {
         return forumService.addLike(id);
     }
 
-    @PutMapping("/post/{id}comment/{creator}")
-    public PostDto addComment(@PathVariable String id, @PathVariable String creator, @RequestBody AddCommentDto addCommentDto) {
-        return forumService.addComment(id, addCommentDto, creator);
-    }
-
     @GetMapping("/posts/creator/{creator}")
-    public Iterable<PostDto> findPostsByCrator(@PathVariable String creator) {
+    public Iterable<PostDto> findPostsByCreator(@PathVariable String creator) {
         return forumService.getPostsByUser(creator);
     }
 

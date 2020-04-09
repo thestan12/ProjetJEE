@@ -4,6 +4,7 @@ package com.mh.forum.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -16,11 +17,11 @@ import java.time.LocalDateTime;
 @Builder
 @Document(collation = "comments")
 public class Comment {
-
-    @Id
-    String idComment;
+    //@Id
+    //String idComment;
     String userEmail;
     String content;
+    //@DBRef
     Post post;
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     LocalDateTime dateCreate;
