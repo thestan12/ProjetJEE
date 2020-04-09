@@ -12,7 +12,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -22,14 +21,14 @@ public class Post {
     @Id
     String idPost;
     String userEmail;
+    @Setter
     String subject;
+    @Setter
     String content;
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     LocalDateTime dateCreate;
     int likes;
-    //@DBRef
     Set<Comment> comments;
-    //@DBRef
     User creator;
 
     public Post(String userEmail, String subject, String content) {

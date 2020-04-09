@@ -16,7 +16,7 @@ public class ForumController {
     ForumService forumService;
 
 
-      @PostMapping("/post/{creator}")
+    @PostMapping("/post/{creator}")
     //@PreAuthorize("#author==authentication.name")
     public PostDto addPost(@RequestBody AddPostDto addPost, @PathVariable("creator") String author) {
         return forumService.addPost(addPost, author);
@@ -37,6 +37,11 @@ public class ForumController {
     @GetMapping("/post/{id}")
     public PostDto getPost(@PathVariable String id) {
         return forumService.getPost(id);
+    }
+
+    @GetMapping("/posts")
+    public Iterable<PostDto> getPosts() {
+        return forumService.getPosts();
     }
 
     @DeleteMapping("/post/{id}")

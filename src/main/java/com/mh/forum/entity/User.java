@@ -17,8 +17,8 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonSerialize(using = ToStringSerializer.class)
+//@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonSerialize(using = ToStringSerializer.class)
 @Document(collation = "users")
 public class User {
     @Id

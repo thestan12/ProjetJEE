@@ -2,9 +2,8 @@ package com.mh.forum.dto;
 
 import lombok.Builder;
 import lombok.Getter;
-
+//@Builder
 @Getter
-@Builder
 public class AddCommentDto {
     String content;
 
@@ -12,6 +11,11 @@ public class AddCommentDto {
         return  content;
     }*/
 
+/*
+  public String getContent(){
+      return content;
+  }
+*/
 
 }
 

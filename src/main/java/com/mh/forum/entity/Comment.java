@@ -10,16 +10,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDateTime;
 
 @Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Builder
 @Document(collation = "comments")
 public class Comment {
     //@Id
     //String idComment;
     String userEmail;
+    @Setter
     String content;
     //@DBRef
     Post post;
