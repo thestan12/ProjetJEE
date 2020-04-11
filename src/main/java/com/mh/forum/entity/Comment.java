@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Document(collation = "comments")
+@Document(collection = "comments")
 public class Comment {
     //@Id
     //String idComment;

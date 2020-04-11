@@ -19,7 +19,7 @@ import java.util.Set;
 @Builder
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 //@JsonSerialize(using = ToStringSerializer.class)
-@Document(collation = "users")
+@Document(collection = "users")
 public class User {
     @Id
     String idUser;

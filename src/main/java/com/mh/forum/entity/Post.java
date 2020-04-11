@@ -16,7 +16,7 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString
 @Builder
-@Document(collation = "posts")
+@Document(collection = "posts")
 public class Post {
     @Id
     String idPost;
