@@ -10,10 +10,11 @@ import java.util.stream.Stream;
 
 @Repository
 public interface ForumRepository extends MongoRepository<Post,String> {
-   // public List<Post> findByUserEmailId(String userEmailId);
 
-    Iterable<PostDto> findAllByOrderByDateCreate();
+
+    Stream<Post> findAllByOrderByDateCreateDesc();
     Stream<Post> findPostsByUserEmail(String userEmail);
+    // public List<Post> findByUserEmailId(String userEmailId);
 /*    Stream<Post> findbyUser(String user);
     List<Post> findAllByOrderByDatePost();
     List<Post> findPostsBySubject(String subject);*/

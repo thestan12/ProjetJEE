@@ -62,7 +62,9 @@ public class ForumServiceImpl implements ForumService {
 
     @Override
     public Iterable<PostDto> getPosts() {
-        return forumRepository.findAllByOrderByDateCreate();
+        return forumRepository.findAllByOrderByDateCreateDesc()
+                .map(this::convertToPostDto)
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -107,7 +109,7 @@ public class ForumServiceImpl implements ForumService {
 
         Post post = forumRepository.findById(id).orElse(null);
         if (null != post) {
-           post.addLike();
+            post.addLike();
             forumRepository.save(post);
             return true;
         }
